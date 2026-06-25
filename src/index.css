@@ -1,0 +1,84 @@
+
+@import "@fontsource-variable/geist";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Custom Animations ───────────────────────────────────────────────── */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.2s ease-out forwards;
+}
+
+@layer base {
+  .theme {
+    --font-heading: var(--font-sans);
+    --font-sans: 'Geist Variable', sans-serif;
+  }
+  :root {
+    --background: 1 0 0; /* white */
+    --foreground: 0.145 0 0; /* very dark grey/black */
+    --card: 1 0 0;
+    --card-foreground: 0.145 0 0;
+    --popover: 1 0 0;
+    --popover-foreground: 0.145 0 0;
+    
+    /* Premium Emerald Primary */
+    --primary: 0.627 0.136 156.4; /* Tailwind emerald-600 approx */
+    --primary-foreground: 1 0 0;
+    
+    /* Soft teal/emerald secondary */
+    --secondary: 0.96 0.02 156.4;
+    --secondary-foreground: 0.4 0.1 156.4;
+    
+    --muted: 0.96 0.01 200; /* subtle slate */
+    --muted-foreground: 0.55 0.02 200;
+    
+    --accent: 0.96 0.01 200;
+    --accent-foreground: 0.145 0 0;
+    
+    --destructive: 0.6 0.2 25;
+    --destructive-foreground: 1 0 0;
+    
+    --border: 0.92 0.01 200;
+    --input: 0.92 0.01 200;
+    --ring: 0.627 0.136 156.4; /* match primary */
+    
+    --chart-1: 0.627 0.136 156.4;
+    --chart-2: 0.556 0 0;
+    --chart-3: 0.439 0 0;
+    --chart-4: 0.371 0 0;
+    --chart-5: 0.269 0 0;
+    
+    --radius: 0.75rem; /* softer, slightly larger radius */
+    
+    --sidebar: 0.985 0 0;
+    --sidebar-foreground: 0.145 0 0;
+    --sidebar-primary: 0.627 0.136 156.4;
+    --sidebar-primary-foreground: 1 0 0;
+    --sidebar-accent: 0.96 0.02 156.4;
+    --sidebar-accent-foreground: 0.4 0.1 156.4;
+    --sidebar-border: 0.92 0.01 200;
+    --sidebar-ring: 0.627 0.136 156.4;
+  }
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  html {
+    @apply font-sans;
+  }
+}

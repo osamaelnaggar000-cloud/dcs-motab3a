@@ -1,0 +1,33 @@
+{
+  "short_name": "صيانة الدلتا",
+  "name": "برنامج الصيانة - شركة الدلتا للسكر",
+  "description": "تطبيق إدارة جداول الصيانة (Gantt Chart) التفاعلي لشركة الدلتا للسكر",
+  "icons": [
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'><rect fill='%23667eea' width='192' height='192'/><text x='50%' y='50%' font-size='120' font-weight='bold' text-anchor='middle' dominant-baseline='middle' fill='white' font-family='Arial'>⚙</text></svg>",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><rect fill='%23667eea' width='512' height='512'/><text x='50%' y='50%' font-size='400' font-weight='bold' text-anchor='middle' dominant-baseline='middle' fill='white' font-family='Arial'>⚙</text></svg>",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#f1f5f9",
+  "display": "standalone",
+  "scope": "/",
+  "theme_color": "#667eea",
+  "orientation": "portrait-primary",
+  "screenshots": [
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 540 720'><rect fill='%23f1f5f9' width='540' height='720'/><text x='270' y='360' font-size='80' text-anchor='middle' dominant-baseline='middle' fill='%23667eea' font-family='Arial'>برنامج الصيانة</text></svg>",
+      "sizes": "540x720",
+      "type": "image/svg+xml",
+      "form_factor": "narrow"
+    }
+  ]
+}

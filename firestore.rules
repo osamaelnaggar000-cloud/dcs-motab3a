@@ -1,0 +1,46 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Check if user is authenticated
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    // Since appState/rolesStateStore holds users, we get the role data.
+    function getUserRoleData() {
+      let stateDoc = get(/databases/$(database)/documents/appState/rolesStateStore);
+      return stateDoc != null ? stateDoc.data.users.get(request.auth.uid, null) : null;
+    }
+
+    // Make sure user is not pending/viewer
+    function isNotPending() {
+      let userData = getUserRoleData();
+      return userData != null && userData.roles.size() > 0 && 
+             userData.roles[0].role != 'pending' && 
+             userData.roles[0].role != 'viewer';
+    }
+
+    match /appState/{docId} {
+      allow read: if isAuthenticated();
+      allow write: if isAuthenticated(); // Allow initial setup by authenticated users
+    }
+    
+    match /gantt_tasks/{taskId} {
+      allow read: if isAuthenticated();
+      // Ensure users are not pending before writing, and validate schema
+      allow create: if isAuthenticated() && isNotPending() && 
+                    request.resource.data.keys().hasAll(['id', 'name', 'duration', 'startDay']) &&
+                    request.resource.data.name is string &&
+                    request.resource.data.duration is number;
+      allow update: if isAuthenticated() && isNotPending() &&
+                    request.resource.data.name is string &&
+                    request.resource.data.duration is number;
+      allow delete: if isAuthenticated() && isNotPending();
+    }
+
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

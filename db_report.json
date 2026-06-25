@@ -1,0 +1,51 @@
+{
+  "absenceStateStore": {
+    "totalAbsences": 1
+  },
+  "ganttStateStore": {
+    "version": 4,
+    "projectStartDate": "2025-08-16T00:00:00.000Z",
+    "totalProjectDays": 138,
+    "numberOfLines": 2,
+    "totalTasks": 2802,
+    "completedTasks": 0
+  },
+  "holidaysStateStore": {
+    "totalHolidays": 0
+  },
+  "locationStateStore": {
+    "totalLocationAssignments": 1,
+    "preview": [
+      [
+        "prod-l1-wash-2",
+        "مؤخرة العمليات الصناعية"
+      ]
+    ]
+  },
+  "locationsListStore": {
+    "totalLocations": 13,
+    "locationsList": [
+      "معمل الاستقبال",
+      "عنبر التفريغ والطبالي",
+      "عنبر الغسيل",
+      "مقدمة العمليات الصناعية",
+      "جهاز الانتشار",
+      "مؤخرة العمليات الصناعية",
+      "مجففات السكر وعنبر التعبئه",
+      "أفران الجير",
+      "غير مسند",
+      "مكابس اللب الطري وأفران اللب الجاف",
+      "محطة الصرف الصناعي والمرافق",
+      "المراجل البخاريه ومياه التغذيه",
+      "محطة توليد القوى"
+    ]
+  },
+  "personnelStateStore": {
+    "supervisorsCount": 100,
+    "techniciansCount": 527,
+    "workersCount": 0,
+    "totalPersonnel": 627,
+    "assignedPersonnel": 626,
+    "unassignedPersonnel": 1
+  }
+}
